@@ -568,14 +568,14 @@ a:focus {
 */
 
 .c-link-cta {
-    position: relative;
-    display: inline-block;
+    position: relative; /*als we position absolute willen gebruiken is dit tov dit element*/
+    display: inline-block; /*link neemte de breedte in van tekst maar toch block styles krijgt zoals padding*/
     text-decoration: none;
     font-size: 16px;
     line-height: 24px;
     font-weight: 400;
     padding: 4px 0;
-    transition: color .175s ease-in;
+    transition: color .175s ease-in;/*er gebeurt animatie*/
 }
 
 .c-link-cta,
@@ -584,9 +584,21 @@ a:focus {
     color: #7373F5;
 }
 
-.c-link-cta::after {
+.c-link-cta::before {
     /*pseudo element*/
-    /* content: "hello world"; */
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 1px;
+    width: 100%;
+    background-color: #7373f5;
+    transform: scaleX(.5); /*element wordt voor helft herschaald op de X-as*/
+    transform-origin: left; /*tranform begint links*/
+    transition-property: transform background-color; /*bepaald welke properties geanimeerd worden*/
+    transition-duration: .175s; /*bepaalt hoe lang de animatie duurt*/
+    transition-timing-function: ease-in; /*bepaalt welke easing moet toegepast worden*/
 }
 
 .c-link-cta:hover {
@@ -594,6 +606,8 @@ a:focus {
 }
 
 .c-link-cta:hover::after {
+    transform: scaleX(1);
+    background-color: #3e3e8a;
 }
 
 
