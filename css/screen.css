@@ -227,6 +227,11 @@ a:focus {
     background: #F7F7F7;
 }
 
+.o-row--gradient{
+    background: linear-gradient(to top right, #5051DB, #3887F7);
+    color: white;
+}
+
 /*
     Objects: Container
     ---
@@ -599,6 +604,7 @@ a:focus {
     transition-property: transform background-color; /*bepaald welke properties geanimeerd worden*/
     transition-duration: .175s; /*bepaalt hoe lang de animatie duurt*/
     transition-timing-function: ease-in; /*bepaalt welke easing moet toegepast worden*/
+    /*https://www.html5rocks.com/en/tutorials/speed/high-performance-animations/*/
 }
 
 .c-link-cta:hover {
@@ -610,6 +616,20 @@ a:focus {
     background-color: #3e3e8a;
 }
 
+/*inversed*/
+.c-link-cta--inverse,
+.c-link-cta--inverse:visited,
+.c-link-cta--inverse:active {
+    color: #fff;
+}
+
+.c-link-cta--inverse::before {
+    background: #fff;
+}
+
+.c-link-cta--inverse:hover::after {
+    background-color: #fff;
+}
 
 
 /*------------------------------------*\
