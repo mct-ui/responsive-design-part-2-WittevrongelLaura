@@ -228,7 +228,7 @@ a:focus {
 }
 
 .o-row--gradient{
-    background: linear-gradient(to top right, #5051DB, #3887F7);
+    background: linear-gradient(to top right, #5051DB 0%, #3887F7 100%);
     color: white;
 }
 
@@ -589,7 +589,7 @@ a:focus {
     color: #7373F5;
 }
 
-.c-link-cta::before {
+.c-link-cta::after {
     /*pseudo element*/
     content: "";
     display: block;
@@ -599,6 +599,7 @@ a:focus {
     height: 1px;
     width: 100%;
     background-color: #7373f5;
+
     transform: scaleX(.5); /*element wordt voor helft herschaald op de X-as*/
     transform-origin: left; /*tranform begint links*/
     transition-property: transform background-color; /*bepaald welke properties geanimeerd worden*/
@@ -623,13 +624,76 @@ a:focus {
     color: #fff;
 }
 
-.c-link-cta--inverse::before {
+.c-link-cta--inverse::after {
     background: #fff;
 }
 
 .c-link-cta--inverse:hover::after {
     background-color: #fff;
 }
+
+/*
+    Component: footer
+    ---
+    Main footer of the website
+*/
+
+.c-footer {
+    
+}
+
+.c-footer__logo {
+    width: 100%
+}
+
+.c-footer__nav {
+    width: 50%;
+}
+
+@media (min-width: 768px) {
+    .c-footer {
+        justify-content: center;
+        align-items: center;
+    }
+
+    .c-footer__logo {
+        display: flex;
+        justify-content: center;
+        padding: 0 12px;
+    }
+
+    .c-footer__nav {
+        width: auto;
+        padding: 0 16px;
+    }
+}
+
+@media (min-width: 992px) {
+    .c-footer {
+        justify-content: space-between;
+    }
+
+    .c-footer__logo {
+        width: auto;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    .c-footer__logo .c-logo {
+        margin-bottom: 0;
+    }
+
+    .c-footer__nav {
+        padding: 0;
+    }
+    
+    .c-footer__logo+.c-footer__nav{
+        order: -1
+    }
+}
+
 
 
 /*------------------------------------*\
