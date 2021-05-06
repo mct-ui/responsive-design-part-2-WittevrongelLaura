@@ -587,6 +587,7 @@ a:focus {
 
 .c-link-cta::after {
   /*pseudo element*/
+  /*content moet erin*/
   content: '';
   display: block;
   position: absolute;
@@ -627,6 +628,35 @@ a:focus {
 .c-link-cta--inverse:hover::after {
   background-color: #fff;
 }
+
+/*
+    Component: Title icon
+    ---
+    Special type of title with icon
+*/
+
+.c-title-icon {
+  display: flex;
+  align-items: center;
+}
+
+.c-title-icon__icon {
+  width: 15%;
+  margin: 0 24px 24px 0;
+}
+
+@media (min-width: 768px) {
+  .c-title-icon__icon{
+    width: 10%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .c-title-icon__icon{
+    width: 20%;
+  }
+}
+
 
 /*
     Component: footer
